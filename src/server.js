@@ -8,10 +8,14 @@ dotenv.config();
 const app = express();
 const port = process.env.PORT || 3000;
 
-// lấy dũ liệu từ file config
+app.use(express.urlencoded({ extended: true }));
+
+app.set('view engine', 'ejs');
+
+// Configure view directory
 configView(app);
 
-// lấy dữ liệu từ route 
+// Set up routes
 RouteWeb(app);
 
 app.listen(port, () => {
