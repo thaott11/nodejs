@@ -11,7 +11,6 @@ route.get('/update/:id', homeController.renderUpdateForm)
 route.post('/update/:id', homeController.updateUser)
 route.post('/delete/:id', homeController.deleteUser)
 
-
 const RouteWeb = (app) => {
     return app.use('/', route)
 }
